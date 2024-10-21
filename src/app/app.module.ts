@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { ContractorsComponent } from './contractors/contractors.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { ServicesComponent } from './services/services.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -16,13 +16,13 @@ import { ServicesComponent } from './services/services.component';
     HomeComponent,
     ContractorsComponent,
     ContactUsComponent,
-    ServicesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
