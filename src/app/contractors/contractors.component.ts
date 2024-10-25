@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiGatewayService} from "../services/api-gateway-service/api-gateway.service";
+import {map} from "rxjs";
 
 @Component({
   selector: 'app-contractors',
@@ -8,18 +9,16 @@ import {ApiGatewayService} from "../services/api-gateway-service/api-gateway.ser
 })
 export class ContractorsComponent implements OnInit {
 
-  public data: String;
+  public variable: any;
 
   constructor(private apiGatewayService: ApiGatewayService) { }
 
   ngOnInit(): void {
-
-
-    let data = this.apiGatewayService.makeRestCall().subscribe(data => console.log(data));
-
-
-
-
+    this.apiGatewayService.makeRestCall().pipe(map(value => value)).subscribe((data) =>
+    {
+      this.variable = data;
+      console.log(data);
+    });
   }
 
 }
