@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Observable} from "rxjs";
+import {Worker} from "../../models/worker.model";
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +12,7 @@ export class ApiGatewayService {
 
   }
 
-  public makeRestCall(){
-
+  public getWorkerById(id:number):Observable<Worker>{
 
     let httpOptions = {
       headers: new HttpHeaders({
@@ -19,8 +20,8 @@ export class ApiGatewayService {
       })
     };
 
-    let url = "http://localhost:8081/workers/1"
-    return this.httpClient.get(url,httpOptions)
+    let url = "http://localhost:8081/workers/" + id;
+    return this.httpClient.get<Worker>(url,httpOptions)
 
   }
 

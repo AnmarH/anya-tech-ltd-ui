@@ -1,4 +1,7 @@
 <p>coming soon!</p>
-<p>{{variable.id}}</p>
-<p>{{variable.name}}</p>
-<p>{{variable.status}}</p>
+<div *ngIf="worker">
+  <p>{{worker.id}}</p>
+  <p>{{worker.name}}</p>
+  <p>{{worker.status}}</p>
+</div>
+
