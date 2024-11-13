@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiGatewayService} from "../services/api-gateway-service/api-gateway.service";
 import {Worker} from "../models/worker.model";
+import {Workers} from "../models/workers.model";
 
 @Component({
   selector: 'app-contractors',
@@ -9,7 +10,8 @@ import {Worker} from "../models/worker.model";
 })
 export class ContractorsComponent implements OnInit {
 
-  public worker: Worker = null;
+  public worker: Worker;
+  public workers: Workers;
 
   constructor(private apiGatewayService: ApiGatewayService) { }
 
@@ -17,6 +19,9 @@ export class ContractorsComponent implements OnInit {
     this.apiGatewayService
       .getWorkerById(1)
       .subscribe((worker) => this.worker = worker);
+
+    this.apiGatewayService.getWorkers()
+      .subscribe((workers => this.workers = workers));
   }
 
 }

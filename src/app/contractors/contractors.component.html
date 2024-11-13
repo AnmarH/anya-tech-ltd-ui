@@ -1,7 +1,54 @@
-<p>coming soon!</p>
-<div *ngIf="worker">
-  <p>{{worker.id}}</p>
-  <p>{{worker.name}}</p>
-  <p>{{worker.status}}</p>
-</div>
+<!--<p>Worker id: 1</p>-->
+<!--<div *ngIf="worker">-->
+<!--  <p>{{worker.id}}</p>-->
+<!--  <p>{{worker.name}}</p>-->
+<!--  <p>{{worker.status}}</p>-->
+<!--</div>-->
+
+<!--<p>All Workers</p>-->
+<!--<div *ngIf="workers">-->
+<!--  <div *ngFor="let worker of workers.workers">-->
+<!--    <p>{{worker.id}}</p>-->
+<!--    <p>{{worker.name}}</p>-->
+<!--    <p>{{worker.status}}</p>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<header class="masthead">
+  <div class="container position-relative">
+    <div class="row justify-content-center">
+      <div class="col-xl-6">
+        <div class="text-center text-white">
+          <h1 *ngIf="workers"> Resources
+            <!-- Page heading-->
+            <h2 class="mb-5" *ngFor="let worker of workers.workers">
+              id: <p>{{worker.id}}</p>
+              name: <p>{{worker.name}}</p>
+              Status: <p>{{worker.status}}</p>
+            </h2>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<header class="masthead">
+  <div class="container position-relative">
+    <div class="row justify-content-center">
+      <div class="col-xl-6">
+        <div class="text-center text-white">
+          <!-- Page heading-->
+          <h2 class="mb-5" *ngIf="worker"> Resource
+            <p>{{worker.id}}</p>
+            <p>{{worker.name}}</p>
+            <p>{{worker.status}}</p>
+          </h2>
+          <!-- Signup form-->
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 

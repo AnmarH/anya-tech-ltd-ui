@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Worker} from "../../models/worker.model";
+import {Workers} from "../../models/workers.model";
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,19 @@ export class ApiGatewayService {
 
     let url = "http://localhost:8081/workers/" + id;
     return this.httpClient.get<Worker>(url,httpOptions)
+
+  }
+
+  public getWorkers(): Observable<Workers> {
+
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    let url = "http://localhost:8081/workers";
+    return this.httpClient.get<Workers>(url,httpOptions)
 
   }
 
