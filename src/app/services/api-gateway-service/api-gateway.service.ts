@@ -21,7 +21,7 @@ export class ApiGatewayService {
       })
     };
 
-    let url = "http://localhost:8081/workers/" + id;
+    let url = "http://ec2-3-255-250-89.eu-west-1.compute.amazonaws.com:8080/workers/" + id;
     return this.httpClient.get<Worker>(url,httpOptions)
 
   }
@@ -34,7 +34,7 @@ export class ApiGatewayService {
       })
     };
 
-    let url = "http://localhost:8081/workers";
+    let url = "http://ec2-3-255-250-89.eu-west-1.compute.amazonaws.com:8080/workers";
     return this.httpClient.get<Workers>(url,httpOptions)
 
   }
